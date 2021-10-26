@@ -1,0 +1,71 @@
+<div>
+    <div class="float">
+        <div class="filter">
+            <h1>Filter</h1>
+
+            <mat-form-field>
+                <mat-label>Project</mat-label>
+                <mat-select [(ngModel)]="filterProjectId">
+                    <mat-option *ngFor="let project of projects" [value]="project.ProjectId">{{project.ProjectName}}
+                    </mat-option>
+                    <mat-option [value]="0">None</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Attribute</mat-label>
+                <mat-select [(ngModel)]="filterAttributeIds" multiple>
+                    <mat-option *ngFor="let attribute of attributes" [value]="attribute.AttributeId">
+                        {{attribute.AttributeName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-button (click)="filterNotes()">Apply Filter</button>
+        </div>
+        <div class="basic-info">
+            <h1>Notes With</h1>
+            <h2>Project:</h2>
+            <div *ngFor="let project of projectNoteCounts">
+                {{project.ProjectName}}: <strong>{{project.Count}}</strong>
+            </div>
+            <h2>Attribute:</h2>
+            <div *ngFor="let attribute of attributeNoteCounts">
+                {{attribute.AttributeName}}: <strong>{{attribute.Count}}</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="float" fxFlex>
+        <div>
+            <h1>Notes
+                <button mat-button (click)="addNote()">Add Note</button>
+            </h1>
+        </div>
+
+        <div *ngFor="let note of notes" class="note">
+            <textarea [(ngModel)]="note.NoteText"></textarea>
+
+            <mat-form-field>
+                <mat-label>Project</mat-label>
+                <mat-select [(ngModel)]="note.ProjectId">
+                    <mat-option *ngFor="let project of projects" [value]="project.ProjectId">{{project.ProjectName}}
+                    </mat-option>
+                    <mat-option [value]="0">None</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Attribute</mat-label>
+                <mat-select [(ngModel)]="note.AttributeIds" multiple>
+                    <mat-option *ngFor="let attribute of attributes" [value]="attribute.AttributeId">
+                        {{attribute.AttributeName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-button *ngIf="note.NoteId" (click)="updateNote(note)">Update</button>
+            <button mat-button *ngIf="note.NoteId" (click)="deleteNote(note)">Delete</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.note {
+    border: 1pt solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.filter {
+    margin-top: 80px;
+    border: 1pt solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+.basic-info {
+    border: 1pt solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+.float{
+    float:left;
+}
+
+mat-form-field {
+    padding: 0px 5px;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+}
