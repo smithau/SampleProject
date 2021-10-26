@@ -8,7 +8,9 @@ run "npm install" in SampleProject\ui\SampleProject
 open SampleProject.sln from SampleProject\api\SampleProject in Visual studio
 Run Project
 run "ng serve -o" in SampleProject\ui\SampleProject
+Postman collection is included in SampleProject\api for east testing of the api
 
+NOTE: in SampleProject\ui\SampleProject\src\services\note\note.service.ts, you may need to update the url to contain the correct port
 
 
 
