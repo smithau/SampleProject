@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "24155b7c-4f58-461c-850e-6470d9ed2023",
+		"name": "NoteProjectApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create A Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NoteText\": \"Enter text here\",\r\n    \"AttributeIds\": [],\r\n    \"ProjectId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60977/api/note/create-note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"create-note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update A Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60977/api/note/update-note?noteId=<ENTERNOTEID>&noteText=<ENTERNOTETEXT>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"update-note"
+					],
+					"query": [
+						{
+							"key": "noteId",
+							"value": "<ENTERNOTEID>"
+						},
+						{
+							"key": "noteText",
+							"value": "<ENTERNOTETEXT>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60977/api/note/delete-note?noteId=<ENTERNOTEIDHERE>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"delete-note"
+					],
+					"query": [
+						{
+							"key": "noteId",
+							"value": "<ENTERNOTEIDHERE>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ProjectName\": \"Enter Project Name Here\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60977/api/note/create-project",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"create-project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"attributeIds\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60977/api/note/get-notes?projectId=<ENTERPROJECTIDHERE>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"get-notes"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "<ENTERPROJECTIDHERE>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Project Note Counts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60977/api/note/get-project-note-counts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"get-project-note-counts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Attribute Note Counts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60977/api/note/get-attribute-note-counts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60977",
+					"path": [
+						"api",
+						"note",
+						"get-attribute-note-counts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
